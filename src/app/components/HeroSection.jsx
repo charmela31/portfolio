@@ -4,7 +4,28 @@ import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from "framer-motion";
 
+const handleDownload = () => {
+    // Replace 'path/to/resume.pdf' with the correct path to your PDF file
+    const pdfPath = "/cv.pdf";
 
+    // Create a link element
+    const link = document.createElement("a");
+
+    // Set the download attribute with the desired file name
+    link.download = "cv.pdf";
+
+    // Set the href attribute to the path of the PDF file
+    link.href = pdfPath;
+
+    // Append the link to the document
+    document.body.appendChild(link);
+
+    // Trigger a click on the link to start the download
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
+  };
 
 
 const HeroSection = () => {
@@ -23,9 +44,9 @@ const HeroSection = () => {
                                 // Same substring at the start will only be typed out once, initially
                                 'Charmela',
                                 1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                'Programmer',
+                                'a Programmer',
                                 1000,
-                                'Web Developer',
+                                'a Web Developer',
                                 1000,
 
                             ]}
@@ -39,7 +60,7 @@ const HeroSection = () => {
                     </p>
                     <div>
                         <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 via-primary-500 to-primary-500 hover:bg-slate-200 text-white'>Hire Me</button>
-                        <button className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 via-primary-500 to-primary-500 hover:bg-slate-800 text-white  mt-3'>
+                        <button onClick={handleDownload} className='px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 via-primary-500 to-primary-500 hover:bg-slate-800 text-white  mt-3'>
                             <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2'>Download CV</span></button>
                     </div>
                 </motion.div>
