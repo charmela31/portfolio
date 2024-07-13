@@ -11,7 +11,7 @@ const projectsData = [
     description: "Dynamic portfolio website showcasing my skills, projects, and achievements",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/charmela31/portfolio",
     previewUrl: "/",
   },
   {
